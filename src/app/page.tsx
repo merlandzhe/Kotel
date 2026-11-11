@@ -54,7 +54,7 @@ export default function HomePage() {
             <a className="transition hover:text-[#187a49]" href="#how">Как это работает</a>
           </nav>
           <div className="hidden items-center gap-3 md:flex">
-            <button className="rounded-xl px-4 py-2.5 text-sm font-semibold text-[#26352d] transition hover:bg-[#f3f7f3]">Войти</button>
+            <span className="px-4 py-2.5 text-sm font-semibold text-[#8a978f]">Вход скоро</span>
             <button onClick={() => setShowRequest(true)} className="rounded-xl bg-[#187a49] px-5 py-3 text-sm font-semibold text-white shadow-[0_6px_16px_rgba(24,122,73,.18)] transition hover:bg-[#12613a]">Создать запрос <ArrowUpRight className="ml-1 inline" size={16}/></button>
           </div>
           <button onClick={() => setMenuOpen(!menuOpen)} className="rounded-xl border border-[#e5ebe6] p-2.5 md:hidden" aria-label="Открыть меню">{menuOpen ? <X/> : <Menu/>}</button>
@@ -168,7 +168,7 @@ export default function HomePage() {
       </section>
 
       <footer className="border-t border-[#e8eee9] bg-white py-9">
-        <div className="container-main flex flex-col justify-between gap-5 sm:flex-row sm:items-center"><div className="flex items-center gap-2"><span className="grid h-8 w-8 place-items-center rounded-[10px] bg-[#187a49] text-[18px] font-black text-white">н</span><span className="text-[20px] font-extrabold tracking-[-1px]">надо<span className="text-[#23945b]">.</span></span></div><p className="text-[11px] text-[#9aa69e]">© 2026 НАДО. Платформа запросов и предложений.</p><div className="flex gap-5 text-[11px] font-medium text-[#718078]"><a href="#how" className="hover:text-[#187a49]">О платформе</a><a href="mailto:hello@nado.example" className="hover:text-[#187a49]">Связаться</a></div></div>
+        <div className="container-main flex flex-col justify-between gap-5 sm:flex-row sm:items-center"><div className="flex items-center gap-2"><span className="grid h-8 w-8 place-items-center rounded-[10px] bg-[#187a49] text-[18px] font-black text-white">н</span><span className="text-[20px] font-extrabold tracking-[-1px]">надо<span className="text-[#23945b]">.</span></span></div><p className="text-[11px] text-[#9aa69e]">© 2026 НАДО. Платформа запросов и предложений.</p><div className="flex gap-5 text-[11px] font-medium text-[#718078]"><a href="#how" className="hover:text-[#187a49]">О платформе</a><span>Контакты скоро</span></div></div>
       </footer>
 
       {showRequest && <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#10251a]/50 p-4 backdrop-blur-sm" onClick={()=>setShowRequest(false)}>
