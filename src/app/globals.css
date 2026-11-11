@@ -5,19 +5,40 @@
 :root { color-scheme: light; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #f7f9f7; color: #17231f; }
+body { margin: 0; background: #fff; color: #101512; }
 button, input { font: inherit; }
 ::selection { background: #d9f0e1; color: #145c37; }
 
-.container-main { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
-.grid-dots {
-  background-image: radial-gradient(rgba(30, 115, 69, .12) 1px, transparent 1px);
-  background-size: 18px 18px;
+.clover-mark { display: grid; width: 43px; height: 43px; grid-template-columns: 1fr 1fr; gap: 3px; transform: rotate(-2deg); }
+.clover-mark i { display: block; border-radius: 50%; background: #07834e; box-shadow: inset -2px -2px 3px rgba(0,0,0,.08); }
+.hero-panel { background: linear-gradient(105deg,#fff 0%,#fff 43%,#eaf7ef 72%,#cdebd8 100%); }
+.hero-art {
+  position: absolute; inset: 0 0 0 auto; width: 57%;
+  background-image: linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.12) 27%,rgba(255,255,255,0) 50%),url("https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=1300&q=90");
+  background-size: cover; background-position: center 35%;
+  clip-path: ellipse(75% 88% at 70% 50%);
 }
-.hero-glow {
-  background: radial-gradient(ellipse at 72% 40%, rgba(72, 181, 112, .17), transparent 38%),
-              radial-gradient(ellipse at 12% 10%, rgba(218, 242, 225, .85), transparent 42%);
+.hero-panel:after { content:""; position:absolute; right:-8%; top:-35%; width:55%; height:150%; border-radius:50%; background:rgba(34,160,91,.12); pointer-events:none; }
+.hero-bubble { position:absolute; z-index:2; display:flex; align-items:center; gap:10px; border:1px solid rgba(225,233,226,.9); border-radius:18px; background:rgba(255,255,255,.96); padding:10px 14px; box-shadow:0 10px 28px rgba(25,65,42,.12); font-size:13px; font-weight:700; line-height:1.25; }
+.bubble-car { right:39%; top:42%; transform:rotate(-5deg); }
+.bubble-mac { right:3%; top:12%; transform:rotate(-4deg); }
+.bubble-home { right:3%; bottom:22%; transform:rotate(3deg); }
+.bubble-thumb { display:block; width:54px; height:42px; flex-shrink:0; border-radius:9px; background-size:cover; background-position:center; }
+.car-thumb { background-image:url("https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=180&q=80"); }
+.laptop-thumb { background-image:url("https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=180&q=80"); }
+.home-thumb { background-image:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=180&q=80"); }
+.category-tile { transition: background .18s ease, transform .18s ease; }
+.category-tile:hover { transform:translateY(-2px); }
+.request-card { transition: box-shadow .2s ease, border-color .2s ease; }
+.request-card:hover { box-shadow:0 10px 28px rgba(22,54,38,.08); border-color:#c5e2ce; }
+.seller-banner { background:linear-gradient(90deg,rgba(0,65,44,.94),rgba(0,65,44,.28)),url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1100&q=85") center/cover; }
+.buyer-banner { background:linear-gradient(90deg,#dff3e8 0%,rgba(223,243,232,.92) 55%,rgba(223,243,232,.35) 100%),url("https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=85") right center/cover; }
+@media (max-width: 1023px) {
+  .hero-art { opacity:.28; width:75%; clip-path:none; }
+  .hero-bubble { display:none; }
+  .hero-panel { min-height:unset; }
 }
-.request-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-.request-card:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(22, 54, 38, .09); border-color: #c5e2ce; }
-.pill { border: 1px solid #e5ebe6; background: white; border-radius: 999px; padding: 8px 13px; white-space: nowrap; }
+@media (max-width: 640px) {
+  .hero-art { width:100%; opacity:.12; }
+  .hero-panel { border-radius:20px; }
+}
